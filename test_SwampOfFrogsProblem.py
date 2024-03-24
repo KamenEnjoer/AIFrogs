@@ -45,7 +45,7 @@ class FrogsProblem:
                     for x in range(self.n):
                         for y in range(self.n):  # Dvimatis foras
                             if state[x][y]: #Jei x:y stovi varlė
-                                distance_map[i][j] += pow(abs(x-i) + abs(y-j), 0.5) #Sumuojame prie žemėlapio langelio distancijos ilgį. Kvadratinė šaknis reikalinga kad prioretizuoti langelius su atstumu nuo visų kitų varlių.
+                                distance_map[i][j] += pow(abs(x-i) + abs(y-j), 0.05) #Sumuojame prie žemėlapio langelio distancijos ilgį. Šaknis reikalinga kad prioretizuoti langelius su atstumu nuo visų kitų varlių.
         ''' #for debug
         print("______________")
         for row in distance_map:
@@ -74,7 +74,7 @@ class FrogsProblem:
         return sum(row.count(True) for row in state) == self.r #Skaičiuojama valrių suma ir lyginama su paduotu pradžioje kiekių
 
 
-problem = FrogsProblem(5, 5) #Problemos sukurimas, kur r<=n*n
+problem = FrogsProblem(10, 10) #Problemos sukurimas, kur r<=n*n
 solution = breadth_first_graph_search(problem) #Problemos sprendimas
 
 if solution: #Jei sprendimas rastas
