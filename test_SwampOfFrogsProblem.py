@@ -80,6 +80,6 @@ solution = breadth_first_graph_search(problem) #Problemos sprendimas
 if solution: #Jei sprendimas rastas
     print("Solution:")
     for row in solution.state: #Išvedama matrica, kur O tai varlės, o - tuščia vieta
-        print(" ".join("O" if cell else "-" for cell in row))
+        print(" ".join("🐸" if cell else " —" for cell in row))
 else:
     print("Solution not found :(.") #Sprendimas nerastas
